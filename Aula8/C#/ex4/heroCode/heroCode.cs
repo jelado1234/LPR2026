@@ -33,9 +33,9 @@ namespace Tabuada
             {
                 falar($"Nome do heroi {bananas}: ");
                 hero[bananas].name = ouvir();
-                falar($"Poder do heroi {bananas}");
+                falar($"Poder do heroi {bananas}: ");
                 hero[bananas].power = ouvir();
-                falar($"Pontuação do heroi {bananas}");
+                falar($"Pontuação do heroi {bananas}: ");
                 hero[bananas].points = ouvirInt();
 
             }
@@ -44,12 +44,14 @@ namespace Tabuada
         }
         static void teamSelection()
         {
-            falar($"Lista de herois para adicionar ao time: ");
+            falarEndl($"Lista de herois para adicionar ao time: ");
+            falarEndl("");
 
             for (int num = 0; num < hero.Length; num++)
             {
-                falar($" Heroi {num + 1} => {hero[num].name} {hero[num].power} {hero[num].points}");
+                falarEndl($" Heroi {num + 1} => {hero[num].name} / Poder => {hero[num].power} / Pontos => {hero[num].points}");
             }
+            falarEndl("");
 
             for (int maracujas = 0; maracujas < team.Length; maracujas++)
             {
@@ -82,20 +84,17 @@ namespace Tabuada
 
             int batatas = 0;
 
-            falar("Equipe: ");
+            falarEndl("Equipe: ");
+            falarEndl("");
             foreach (Team teamZ in team)
             {
                 batatas++;
-                falar($"Integrante {batatas} =>");
-                falarEndl("");
-
-                falar($"{teamZ.namet}");
-                falar($"{teamZ.powert}");
-                falarEndl("");
+                falarEndl($"Integrante {batatas} => {teamZ.namet} / Poder => {teamZ.powert}");
             }
 
             int totalPoints = teamPoints();
 
+            falarEndl("");
             falar($"Pontuação total => {totalPoints}");
             falarEndl("");
 
@@ -103,10 +102,10 @@ namespace Tabuada
         }
         static void preMenu()
         {
-            falar("Bem vindo ao menu principal do criador de equipe!");
+            falarEndl("Bem vindo ao menu principal do criador de equipe!");
             falarEndl("");
-            falar("Registre os heris disponiveis, seus poderes e pontuação.");
-            falar("1 para sim, 0 para sair");
+            falarEndl("Registre os heris disponiveis, seus poderes e pontuação.");
+            falar("1 para continuar, 0 para sair => ");
 
             int choice = ouvirInt();
 
@@ -116,20 +115,25 @@ namespace Tabuada
             }
             else
             {
-                falar("Goodbye.");
+                falarEndl("Change the world...");
+                falarEndl("My final message...");
+                falarEndl("Goodbye...");
                 Environment.Exit(0);
             }
 
         }
         static void menu()
         {
-            falarEndl("");
-            falarEndl("1 - Registrar heróis");
-            falarEndl("2 - Montar equipe");
-            falarEndl("3 - Mostrar equipe");
-            falarEndl("0 - Sair");
+            falarEndl("------------------------");
+            falarEndl("1 ->    Registrar heróis");
+            falarEndl("2 ->       Montar equipe");
+            falarEndl("3 ->      Mostrar equipe");
+            falarEndl("0 ->                Sair");
+            falarEndl("------------------------");
 
             int select = ouvirInt();
+            falarEndl("");
+
             switch (select)
             {
                 case 1:
