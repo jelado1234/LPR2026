@@ -116,8 +116,11 @@ namespace Tabuada
             else
             {
                 falarEndl("Change the world...");
+                Thread.Sleep(2000);
                 falarEndl("My final message...");
+                Thread.Sleep(2000);
                 falarEndl("Goodbye...");
+                Thread.Sleep(1500);
                 Environment.Exit(0);
             }
 
@@ -149,6 +152,12 @@ namespace Tabuada
                     break;
 
                 default:
+                    falarEndl("Change the world...");
+                    Thread.Sleep(2000);
+                    falarEndl("My final message...");
+                    Thread.Sleep(2000);
+                    falarEndl("Goodbye...");
+                    Thread.Sleep(1500);
                     Environment.Exit(0);
                     break;
             }
