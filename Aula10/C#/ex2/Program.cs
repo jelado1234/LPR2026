@@ -15,7 +15,14 @@ namespace Retanguliro
         }
         public void raiseFunc()
         {
-            if (salary > 3000)
+            Console.WriteLine("Aumento");
+            raise = Convert.ToDouble(Console.ReadLine());
+            salary = salary + (salary * raise);
+            taxCalc();
+        }
+        public double taxCalc()
+        {
+            if (salary > 3001)
             {
                 tax = 0.20;
             }
