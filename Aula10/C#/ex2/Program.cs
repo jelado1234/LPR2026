@@ -11,14 +11,20 @@ namespace Retanguliro
         public double afterTax = 1800.00;
         public void showFunc()
         {
-            Console.WriteLine($"{name} / R${afterTax}");
+            Console.WriteLine($"{name} / R${afterTax:F2}");
         }
         public void raiseFunc()
         {
-            Console.WriteLine("Aumento");
+            Console.Write("Porcentagem de aumento (ex: 2 para 2%): ");
+
             raise = Convert.ToDouble(Console.ReadLine());
+            raise = raise / 100;
             salary = salary + (salary * raise);
+
             taxCalc();
+            Console.WriteLine($"Novo salario bruto: R${salary:F2}");
+            Console.WriteLine($"Após impostos: R${afterTax:F2}");
+
         }
         public double taxCalc()
         {
@@ -74,7 +80,7 @@ namespace Retanguliro
 
                 case 2:
                     x.raiseFunc();
-                    menu(x);  
+                    menu(x);
                     break;
 
                 case 3:
