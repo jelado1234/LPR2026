@@ -8,6 +8,10 @@ namespace Retanguliro
         public string name;
         public double[] tests = {2.5, 2.5};
         public double gradedW = 2;
+        public void gradeChange()
+        {
+            
+        }
         public double avgGrade()
         {
             avg = (gradedW + tests[0] + tests[1]) / 3;
@@ -36,6 +40,10 @@ namespace Retanguliro
         static double ouvir2() => Convert.ToDouble(Console.ReadLine());
         static void Main()
         {
+            DS aluno1, aluno2;
+
+
+            
             
         }
     }
